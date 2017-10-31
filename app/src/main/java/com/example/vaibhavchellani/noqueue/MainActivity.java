@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private Button trial_createqueue;
     private DatabaseReference mDatabase;
     private FirebaseRecyclerAdapter<Queue,QueuesViewHolder> mFirebaseRecycleAdapter;
-    @BindView(R.id.getToken) Button getTokenButton;
+
     @BindView(R.id.queue_list_view) public RecyclerView mQueueRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,13 +125,7 @@ public class MainActivity extends AppCompatActivity {
         mQueueRecyclerView.setLayoutManager(mlinearLayoutManager);
         mQueueRecyclerView.setAdapter(mFirebaseRecycleAdapter);
 
-        getTokenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(getApplicationContext(),JoinQueue.class);
-                startActivity(i);
-            }
-        });
+
 
     }
 
